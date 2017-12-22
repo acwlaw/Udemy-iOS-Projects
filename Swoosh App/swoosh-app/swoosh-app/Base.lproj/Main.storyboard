@@ -37,7 +37,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GO ALL IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1W-Ty-PCa">
                                 <rect key="frame" x="67.5" y="176" width="240" height="59"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="239.5" id="CHL-Tc-5xX"/>
                                     <constraint firstAttribute="height" constant="59" id="uX4-zN-Fuv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="48"/>
@@ -47,7 +46,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ON GOING ALL OUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfD-c1-ACl">
                                 <rect key="frame" x="74" y="235" width="227" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="227" id="ick-wc-xA3"/>
                                     <constraint firstAttribute="height" constant="33" id="zTN-mL-Aca"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="23"/>
@@ -70,9 +68,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find a team in your city &amp; dominate the league" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gz0-7G-P1d">
-                                <rect key="frame" x="30.5" y="289" width="314" height="113"/>
+                                <rect key="frame" x="6.5" y="289" width="361.5" height="113"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="314" id="QUW-aZ-M9p"/>
                                     <constraint firstAttribute="height" constant="113" id="zW8-nS-AtN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
@@ -111,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="136.5" y="133.5"/>
         </scene>
         <!--LeagueVC-->
         <scene sceneID="vNP-q9-WII">
@@ -161,6 +158,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="onMensTapped:" destination="clB-Gi-c0r" eventType="touchUpInside" id="8hB-Ia-j3N"/>
                                             <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pam-Pk-plv"/>
                                         </connections>
                                     </button>
@@ -176,6 +174,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="onWomensTapped:" destination="clB-Gi-c0r" eventType="touchUpInside" id="35e-mF-stN"/>
                                             <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NNF-Td-vPB"/>
                                         </connections>
                                     </button>
@@ -191,12 +190,13 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="onCoedTapped:" destination="clB-Gi-c0r" eventType="touchUpInside" id="z0w-bL-EHf"/>
                                             <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Uz-xO-zJr"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAU-DM-ROo" customClass="BorderButton" customModule="swoosh_app" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAU-DM-ROo" customClass="BorderButton" customModule="swoosh_app" customModuleProvider="target">
                                 <rect key="frame" x="20" y="572" width="335" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40764126709999998" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -245,6 +245,7 @@
                         <viewLayoutGuide key="safeArea" id="dHG-jE-dzo"/>
                     </view>
                     <connections>
+                        <outlet property="nextBtn" destination="cAU-DM-ROo" id="PQG-Eq-b4E"/>
                         <segue destination="6YI-sn-Cv2" kind="show" identifier="skillVCSegue" id="TBp-WJ-V3g"/>
                     </connections>
                 </viewController>

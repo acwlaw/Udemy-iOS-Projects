@@ -9,10 +9,16 @@
 import UIKit
 
 class LeagueVC: UIViewController {
+    
+    // make it implicitly unwrapped optional - don't run if we dont have a player
+    var player: Player!
 
-   
+    @IBOutlet weak var nextBtn: BorderButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        player = Player() // initializes the struct
 
         // Do any additional setup after loading the view.
     }
@@ -23,16 +29,32 @@ class LeagueVC: UIViewController {
         performSegue(withIdentifier: "skillVCSegue", sender: self)
     }
     
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // TRY NOT TO HAVE LOGIC INTO IB ACTIONS - create a helper function
+    @IBAction func onMensTapped(_ sender: Any) {
+        selectLeague(leagueType: "mens")
     }
-    */
+    
+    @IBAction func onWomensTapped(_ sender: Any) {
+        selectLeague(leagueType: "womens")
+    }
+    
+    @IBAction func onCoedTapped(_ sender: Any) {
+        selectLeague(leagueType: "coed")
+    }
+
+    func selectLeague(leagueType: String) {
+        player.desiredLeague = leagueType
+        nextBtn.isEnabled = true
+    }
+    
+    // called whenever a segue action is called - where data is passed between VCs
+    // only want to go to one type of VC, if have multiple do a series of if/elses
+    // will be called before viewDidLoad of the destination VC
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let skillVC = segue.destination as? SkillVC {
+            skillVC.player = player // setting the SkillVC player as a leagueVC player
+        }
+    }
 
 }
