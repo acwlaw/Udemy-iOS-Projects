@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="swoosh_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="swoosh_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--LeagueVC-->
         <scene sceneID="vNP-q9-WII">
             <objects>
-                <viewController id="clB-Gi-c0r" sceneMemberID="viewController">
+                <viewController id="clB-Gi-c0r" customClass="LeagueVC" customModule="swoosh_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vCi-iw-sW6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,6 +207,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="onNextTapped:" destination="clB-Gi-c0r" eventType="touchUpInside" id="k5Z-zV-sM3"/>
                                     <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vz8-Ud-GIe"/>
                                 </connections>
                             </button>
@@ -243,16 +244,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dHG-jE-dzo"/>
                     </view>
+                    <connections>
+                        <segue destination="6YI-sn-Cv2" kind="show" identifier="skillVCSegue" id="TBp-WJ-V3g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WtI-Br-MJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="LgG-Dm-K14" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="860" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--SkillVC-->
         <scene sceneID="ZYB-iH-0yb">
             <objects>
-                <viewController id="6YI-sn-Cv2" sceneMemberID="viewController">
+                <viewController id="6YI-sn-Cv2" customClass="SkillVC" customModule="swoosh_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ejw-Bk-Y91">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -312,7 +316,7 @@
                                     <constraint firstAttribute="height" constant="50" id="ilQ-cT-9Xh"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90M-y2-dVS" customClass="BorderButton" customModule="swoosh_app" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90M-y2-dVS" customClass="BorderButton" customModule="swoosh_app" customModuleProvider="target">
                                 <rect key="frame" x="20" y="572" width="335" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40764126709999998" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -332,6 +336,7 @@
                             <constraint firstItem="90M-y2-dVS" firstAttribute="leading" secondItem="BMy-mo-IFm" secondAttribute="leading" constant="20" id="4h5-bH-Bl1"/>
                             <constraint firstItem="DUj-ua-Ok5" firstAttribute="leading" secondItem="BMy-mo-IFm" secondAttribute="leading" constant="20" id="EIs-I1-zdM"/>
                             <constraint firstItem="gn1-ai-DNa" firstAttribute="leading" secondItem="BMy-mo-IFm" secondAttribute="leading" id="FLo-p1-Fxq"/>
+                            <constraint firstItem="BMy-mo-IFm" firstAttribute="bottom" secondItem="90M-y2-dVS" secondAttribute="bottom" constant="45" id="GXc-UQ-GbF"/>
                             <constraint firstItem="FKi-Um-lx2" firstAttribute="top" secondItem="Ejw-Bk-Y91" secondAttribute="top" constant="35" id="W0U-yi-WDv"/>
                             <constraint firstItem="gn1-ai-DNa" firstAttribute="top" secondItem="Ejw-Bk-Y91" secondAttribute="top" id="X51-dI-5fs"/>
                             <constraint firstItem="BMy-mo-IFm" firstAttribute="trailing" secondItem="DUj-ua-Ok5" secondAttribute="trailing" constant="20" id="cxJ-Bd-3qN"/>
