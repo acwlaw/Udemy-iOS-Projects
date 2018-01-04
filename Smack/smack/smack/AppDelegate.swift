@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  smack
+//  Smack
 //
-//  Created by Alex Law on 2017-12-29.
-//  Copyright © 2017 alex. All rights reserved.
+//  Created by Alex Law on 2018-01-03.
+//  Copyright © 2018 alex. All rights reserved.
 //
 
 import UIKit
